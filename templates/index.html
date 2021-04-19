@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<style>
+		.box{
+			margin: 40px;
+			padding: 30px;
+			box-shadow: 3px 3px 3px 3px black;
+			background-color: white;
+		}
+		.cont{
+			display: flex;
+			margin-left: 18px;
+		}
+		.pho{
+			max-height: 200px;
+			max-width: 150px;
+		}
+		.para{
+			font-size: 20px;
+			margin-left: 15px;
+		}
+		.frm{
+			position: fixed;
+			text-align: center;
+			background-color: rgb(0, 0, 0, 0.6);
+			min-width: 30%;
+			margin-left: 30%;
+			padding: 30px;
+			font-weight: bold;
+			color: white;
+		}
+		.dt{
+			text-align: right;
+		}
+	</style>
+</head>
+
+<body style="background-image:linear-gradient(to right, red , yellow)">
+
+<div class="frm">
+	<div class="sign">
+		<h1 style="color:black"><u><b>Sign Up</b></u></h1>
+		<form action="/contact" method="post">
+			<label>Username</label><br>
+			<input type="text" name="user" placeholder="Enter Your Name"><br>
+			<label>Email</label><br>
+			<input type="Email" name="email" placeholder="Enter the email"><br>
+			<label>Password</label><br>
+			<input type="Password" name="pswrd" placeholder="Enter Password"><br><br>
+			<input type="submit" class="butt" name="log" value="Sign Up">
+		</form>
+	</div>
+<hr>
+	<div class="log">
+		<h1 style="color:black"><u><b>Log In</b></u></h1>
+		<form method="get" action="/">
+			<label>Email</label><br>
+			<input type="Email" name="email" placeholder="Enter the email"><br>
+			<label>Password</label><br>
+			<input type="Password" name="pass" placeholder="Enter Password"><br><br>
+			<input type="submit"  class="butt" name="sign" value="Log In">
+		</form>
+	</div>
+</div>
+
+{% for post in post %}
+{% set fname = post.photo %}
+<div class="box">
+	<h2><u>{{post.heading}}</u></h2>
+	<div class="cont">
+		<img class="pho" src="{{ url_for('static', filename=fname) }}">
+		<p class="para">{{post.paragraph}}</p>
+	</div>
+	<div class="dt">Published on - {{post.date}}</div>
+</div>
+{% endfor %}
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+	$('.butt').mouseenter(function(){
+		$('.frm').hide(5000);
+	});
+</script>
+</html>

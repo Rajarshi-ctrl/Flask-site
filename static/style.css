@@ -1,0 +1,8 @@
+for i in info:
+    if name == info.email():
+        if psword == info.pswrd():
+            return("Welcome back. Have a good day.")
+        else:
+            return("You have entered a incorrect password.")
+    else:
+        return("User not registered. Please register first.")

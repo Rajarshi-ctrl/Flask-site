@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us</title>
+	<style>
+		.frm{
+			text-align: center;
+			background-color: rgb(0, 0, 0, 0.3);
+			min-width: 30%;
+			margin-left: 30%;
+			padding: 30px;
+			position: absolute;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body style="background-image:linear-gradient(to right, red , yellow)">
+
+<div class="frm">
+	<div class="sign">
+		<h1><u><b>Sign Up</b></u></h1>
+		<form action="/contact" method="post">
+			<label>Username</label><br>
+			<input type="text" name="user" placeholder="Enter Your Name"><br>
+			<label>Email</label><br>
+			<input type="Email" name="email" placeholder="Enter the email"><br>
+			<label>Password</label><br>
+			<input type="Password" name="pswrd" placeholder="Enter Password"><br><br>
+			<input type="submit" name="log" value="Sign Up">
+		</form>
+	</div>
+<hr>
+	<div class="log">
+		<h1><u><b>Log In</b></u></h1>
+		<form action="/contact" method="get">
+			<label>Email</label><br>
+			<input type="Email" name="email" placeholder="Enter the email"><br>
+			<label>Password</label><br>
+			<input type="Password" name="pass" placeholder="Enter Password"><br><br>
+			<input type="submit" name="sign" value="Log In">
+
+		</form>
+	</div>
+</div>
+
+</body>
+</html>
